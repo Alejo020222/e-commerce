@@ -1,4 +1,4 @@
-import { titleFont } from "./config/font";
+import { titleFont } from "../../config/font";
 
 export default function Home() {
   return (
