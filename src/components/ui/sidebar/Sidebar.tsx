@@ -1,5 +1,6 @@
 "use client";
 import { useUiStore } from "@/store/ui/ui-store";
+import clsx from "clsx";
 import Link from "next/link";
 import {
   IoCloseOutline,
@@ -14,7 +15,6 @@ import {
 export const Sidebar = () => {
   const isSideMenuOpen = useUiStore((state) => state.isSideMenuOpen);
   const closeMenu = useUiStore((state) => state.closeSideMenu);
-  const openMenu = useUiStore((state) => state.openSideMenu);
 
   return (
     <div>
@@ -23,18 +23,26 @@ export const Sidebar = () => {
           <div className=" fixed top-0 left-0 w-screen h-screen z-10 bg-black opacity-30" />
         ) && (
           //    {/* Blur */}
-          <div className="fade-in fixed top-0 left-0 w-screen h-screen z-10 backdrop-filter backdrop-blur-sm" />
+          <div
+            onClick={() => closeMenu()}
+            className="fade-in fixed top-0 left-0 w-screen h-screen z-10 backdrop-filter backdrop-blur-sm"
+          />
         )}
 
       {/* SideMenu */}
       <nav
         //todo: efecto de slide
-        className=" fixed p-5 right-0 top-0 w-[500px] h-screen bg-white z-20 shadow-2xl transform transition-all duration-300"
+        className={clsx(
+          " fixed p-5 right-0 top-0 w-[500px] h-screen bg-white z-20 shadow-2xl transform transition-all duration-300",
+          {
+            "translate-x-full": !isSideMenuOpen,
+          }
+        )}
       >
         <IoCloseOutline
           size={50}
           className=" absolute top-5 right-5 cursor-pointer"
-          onClick={() => console.log("Has dado click")}
+          onClick={() => closeMenu()}
         />
         {/* Input de Busqueda */}
         <div className=" relative mt-14">
