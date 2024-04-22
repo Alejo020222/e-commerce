@@ -1,4 +1,8 @@
-import { QuantitySelector, SizeSelector } from "@/components";
+import {
+  ProductSlidesShow,
+  QuantitySelector,
+  SizeSelector,
+} from "@/components";
 import { titleFont } from "@/config/font";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
@@ -20,10 +24,13 @@ export default function ({ params }: Props) {
   return (
     <div className=" mt-5 mb-20 grid grid-cols-1 md:grid-cols-3 gap-3">
       {/* Slideshow */}
-      <div className=" col-span-1 md:col-span-2 bg-red-300"></div>
+      <div className=" col-span-1 md:col-span-2">
+        <ProductSlidesShow images={product.images} title={product.title} />
+      </div>
+
       {/* Product Information */}
 
-      <div className=" col-span-1 px-5 bg-blue-200">
+      <div className=" col-span-1 px-5">
         <h1 className={`${titleFont.className} antialiased font-bold text-xl`}>
           {product.title}
         </h1>
