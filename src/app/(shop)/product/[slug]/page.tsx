@@ -34,7 +34,7 @@ export default function ({ params }: Props) {
           availableSize={product.sizes}
         />
         {/* selector de cantidad */}
-        <QuantitySelector quantity={product.inStock} />
+        <QuantitySelector quantity={1} />
         {/* button */}
         <button className=" btn-primary my-5">Agregar al Carrito</button>
         {/* Description */}
