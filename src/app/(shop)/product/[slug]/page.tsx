@@ -1,4 +1,5 @@
 import {
+  ProductMobileSlidesShow,
   ProductSlidesShow,
   QuantitySelector,
   SizeSelector,
@@ -25,11 +26,21 @@ export default function ({ params }: Props) {
     <div className=" mt-5 mb-20 grid grid-cols-1 md:grid-cols-3 gap-3">
       {/* Slideshow */}
       <div className=" col-span-1 md:col-span-2">
-        <ProductSlidesShow images={product.images} title={product.title} />
+        {/* Desktop SlideShow */}
+        <ProductSlidesShow
+          images={product.images}
+          title={product.title}
+          className=" hidden md:block"
+        />
+        {/* Mobile SlideShow */}
+        <ProductMobileSlidesShow
+          images={product.images}
+          title={product.title}
+          className=" block md:hidden"
+        />
       </div>
 
       {/* Product Information */}
-
       <div className=" col-span-1 px-5">
         <h1 className={`${titleFont.className} antialiased font-bold text-xl`}>
           {product.title}
