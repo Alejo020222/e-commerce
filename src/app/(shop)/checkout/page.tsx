@@ -33,13 +33,26 @@ export default function () {
                 <div>
                   <p>{product.title}</p>
                   <p>${product.price * 3}</p>
-                  <p>Subtotal:{product.price * 5}</p>
+                  <p className=" font-bold">Subtotal:{product.price * 5}</p>
                 </div>
               </div>
             ))}
           </div>
           {/* Checkout Resumen de orden*/}
           <div className=" bg-white rounded-xl shadow-xl p-7">
+            <h2 className=" text-2xl mb-2">Dirección de entrega</h2>
+            <div className=" mb-10">
+              <p className=" text-xl">Ramon Martinez</p>
+              <p>Av. Simepre Viva 434</p>
+              <p>Col. Centro</p>
+              <p>Alcaldia Cuahutémoc</p>
+              <p>Ciudad de Mexico</p>
+              <p>CP.684318</p>
+              <p>(654) 648 68463</p>
+            </div>
+            {/* Divader */}
+            <div className=" w-full h-0.5 rounded bg-gray-200 mb-10"></div>
+
             <h2 className=" text-2xl mb-2">Resumen de orden</h2>
             <div className=" grid grid-cols-2">
               <span className="">No. Productos</span>
@@ -56,10 +69,10 @@ export default function () {
             </div>
             <div className=" mt-5 mb-5 w-full">
               <Link
-                href="/checkout/address"
+                href="/orders/31232131"
                 className=" flex btn-primary justify-center"
               >
-                Checkout
+                Colocar Orden
               </Link>
             </div>
           </div>
