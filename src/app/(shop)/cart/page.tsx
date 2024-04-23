@@ -1,8 +1,8 @@
-import { QuantitySelector, Title } from "@/components";
-import { initialData } from "@/seed/seed";
-import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { redirect } from "next/navigation";
+import { initialData } from "@/seed/seed";
+import { QuantitySelector, Title } from "@/components";
+import Image from "next/image";
 import { IoTrashOutline } from "react-icons/io5";
 
 export default function () {
@@ -11,6 +11,8 @@ export default function () {
     initialData.products[1],
     initialData.products[2],
   ];
+
+  // redirect("/empty");
 
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
